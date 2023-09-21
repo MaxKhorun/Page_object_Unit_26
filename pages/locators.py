@@ -12,3 +12,4 @@ class SuccessLoginPageLocators:
     MY_PETS_btn = (By.LINK_TEXT, "/my_pets")  # link
     ALL_PETS_btn = (By.LINK_TEXT, "/all_pets")  # link
     LOG_OUT_tbn = (By.CLASS_NAME, "btn-outline-secondary")
+
