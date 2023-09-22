@@ -19,5 +19,8 @@ class AuthPage(BasePage):
     def input_passw(self, val):
         self.password.send_keys(val)
 
+    def forget_me(self):
+        pass
+
     def click_to_submit(self):
         self.btn_click.click()
