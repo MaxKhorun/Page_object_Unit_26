@@ -1,45 +1,41 @@
-# import re
-# str = '3 for 200.99'
-# p = r'\d+.\d'
-# match = re.search(p, str)
-#
-# print(match.group())
-from aspose.email import ImapClient
-"""import base64
-import email
-import imaplib
-from email.header import decode_header
+import os
+from pathlib import Path
 
-mail_adress = 'sea-of-max@yandex.ru'
-mail_pass = 'ppcmkhjkkxmmtmhj'
-
-mail = imaplib.IMAP4_SSL('imap.yandex.ru')
-mail.login(mail_adress, mail_pass)
-mail.list()
-mail.select('inbox')
-
-result, data = mail.search(None, 'unseen')
-ids = data[0]
-ids_list = ids.split()
-latest_mail = ids_list[-1]
-
-res, data = mail.fetch(latest_mail, "(RFC822)")
-msg_data = data[0][1]
-
-text = ''
-new_list = []
-payload = msg_data.get_payload()
-for part in payload:
-  print(part.get_content_type())
-
-# for part in msg.walk():
-#     if part.get_content_maintype() == 'text' and part.get_content_subtype() == 'plain':
-#         text += base64.b64decode(part.get_payload()).decode()
+# def is_majority(items: list[bool]) -> bool:
+#     # your code here
+#     comp_list =[]
+#     for i in items:
+#         if i == True:
+#             comp_list.append(i)
+#     if len(comp_list) > len(list) // 2:
+#         return True
+#     elif len(comp_list) <= len(list) // 2:s
+#         return False
 
 
-print(new_list)"""
+# result = os.system('cmd /k "driverquery"').read()
+# result = result.split('\n')[2]
+# print(result)
 
-with ImapClient("imap.gmail.com", 993, "username", "password") as client:
+'''file = open('drivers.txt', "r+", encoding="utf-8")
+# req_drivers = os.system('driverquery /v')
+# file.write(req_drivers)
+# for line in file:
+#     if "Filesystem" in line:
+#         print(line)
+file.write('text, here it is')
+print(file)
+file.close()'''
 
-    # get list of folders
-    folderInfoColl = client.list_folders()
+
+file_path = Path(r'E:\Документы\new_f.txt')
+os.chdir(r'E:\Документы\1.Налоговая\Декларации')
+os.chdir('..'*2)
+if file_path.exists():
+    with open('new_f.txt', 'r') as f:
+        for i, line in enumerate(f):
+            if i == 3:
+                break
+        print(line)
+else:
+    print('File is not found')
